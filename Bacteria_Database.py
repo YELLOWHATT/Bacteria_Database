@@ -1,28 +1,23 @@
 # -*- coding: utf-8 -*-
 
-__author__ = "Nico Moric, Marcus Ocampo"
-__copyright__ = "No Copyright Yet"
-__credits__ = "Nico Moric, Marcus Ocampo, Mr.Vhyte"
+__author__ = "BIO-LOGYK Software"
+__credits__ = "Nico Moric"
 __license__ = "MIT"
-__version__ = "0.0.0.0.11"
-__maintainer__ = "Nico David Moric, Marcus Ocampo"
+__version__ = "0.0.0.0.25"
+__maintainer__ = "Nico Moric"
 __email__ = "thekoolaidmannn@gmail.com"
-__status__ = "Production"
-__name__ = "?"
-__dates__ = "11/17/18 - 11/25/18"
+__status__ = "Production - Pre Alpha"
+__dates__ = "11/17/18 - 11/28/18"
 __type__ = "Scientific Application"
-__estimated_realease_date__ = "03/04/19"
-__name__ = "Bac-Biolog"
-__help__ = "Mr.Vhyte"
+__estimated_release_date__ = "03/07/19"
+__name__ = "Bactirio-Biolog"
 
-import wikipedia
-import math
+#import wikipedia
+import time
 import sys
-import random
 import os
 
-
-##### The numebrs are organized in binary
+##### Numbers are organized in binary
 
 class bacteria_name:
 
@@ -33,7 +28,6 @@ class bacteria_name:
 
     def __str__(self):
         return " ".join(["Name:", self.name, "Type:", self.type, "Species:", self.species])
-
 
 #####
 
@@ -51,6 +45,8 @@ bac00001101 = bacteria_name("Enterobacter Cloacae", "Gram Negative", "Cloacae") 
 bac00001111 = bacteria_name("Yersinia Pestis", "Gram Negative", "Pestis")  # 15
 bac00010001 = bacteria_name("Neisseria Meningitidis", "Gram Negative", "Meningitidis")  # 17
 bac00010011 = bacteria_name("Prevotella Melaninogenica", "Gram Negative", "Melaninogenica")  # 19
+bac00010101 = bacteria_name("Salmonella Bongori", "Gram Negative", "Bongori") # 21
+bac00010111 = bacteria_name("Vibrio Cholerae", "Gram Negative", "Cholerae") # 23
 
 ##### Scientific name || Gram - || Species
 
@@ -72,6 +68,8 @@ bac00001110 = bacteria_name("Clostridioides Difficile", "Gram Positive", "Diffic
 bac00010000 = bacteria_name("Streptococcus Mitis", "Gram Positive", "Mitis")  # 16
 bac00010010 = bacteria_name("Clostridium Perfringens", "Gram Positive", "Perfringens")  # 18
 bac00010100 = bacteria_name("Staphylococcus Saprophyticus", "Gram Positive", "Saprophyticus")  # 20
+bac00010110 = bacteria_name("Corynebacterium Diphtheriae", "Gram Positive", "Diphtheriae") # 22
+bac00011000 = bacteria_name("Streptococcus Pyogenes", "Gram Positive", "Pyogenes") # 24
 
 
 ##### Scientific name || Gram + || Species
@@ -82,38 +80,116 @@ bac00010100 = bacteria_name("Staphylococcus Saprophyticus", "Gram Positive", "Sa
 
 def g_s():  # Gram Stain
 
+    def start_dos():
+
+        print("\n")
+        print("Please enter either 0 or 1 ( 0 - to exit the program || 1 - to continue the program )\n")
+
+        strt = str(input())
+
+        if (strt == "1"):
+
+            print("Ok continuing program\n")
+            g_s()
+
+        elif (strt == "0"):
+
+            print("Ok exitting program\n")
+            raise SystemExit()
+
+        else:
+
+            print("You have not entered a legal input try again\n")
+            time.sleep(2)
+            start_dos()
+
+    def start_uno():
+
+        print("\n")
+        print("You have entered an illegal input please try again\n")
+        print("Or do you wish to exit?\n")
+
+        ext = str(input())
+
+        if (ext == "Yes"):
+
+            print("Ok exitting...")
+            raise SystemExit()
+
+        elif (ext == "No"):
+
+            print("Ok going back to the program")
+            time.sleep(2)
+            g_s()
+
+        else:
+
+            print("You have not entered a legal input please try again\n")
+            start_dos()
+
     gram_pos = [bac00000010, bac00000100, bac00000110, bac00001000, bac00001010, bac00001100,
-                bac00001110, bac00010000, bac00010010, bac00010100]  # || EVEN NUMBERS
+                bac00001110, bac00010000, bac00010010, bac00010100, bac00010110, bac00011000]  # || EVEN NUMBERS
 
     gram_neg = [bac00000001, bac00000011, bac00000101, bac00000111, bac00001001, bac00001011,
-                bac00001101, bac00001111, bac00010001, bac00010011]  # || ODD NUMBERS
+                bac00001101, bac00001111, bac00010001, bac00010011, bac00010101, bac00010111]  # || ODD NUMBERS
 
-    print("Welcome!")
-    print("\nYou are using version " + __version__ + " of " + __name__)
-
-    print("\nPlease enter a gram stain or enter a name\n")
+    print("\nPlease enter a Gram stain or a Name\n")
+    print("If you would like to find more information on a bacterial species enter wikipedia\n")
 
     NTS = str(input())
 
-    if (NTS == "Gram Positive" or NTS == "Gram positive" or NTS == "gram positive"):
+    if (NTS == "Gram Positive" or NTS == "Gram positive" or NTS == "gram positive"): # Grams
 
         for gram_pos in gram_pos:
             print("\n")
             print(gram_pos)
             print("\n")
-        input("Press enter to continue...")
+        input("This is the end of the program press enter to exit...")
 
-    elif (NTS == "Gram Negative" or NTS == "Gram negative" or NTS == "gram negative"):
+    elif (NTS == "Gram Negative" or NTS == "Gram negative" or NTS == "gram negative"): # Grams
 
         for gram_neg in gram_neg:
             print("\n")
             print(gram_neg)
             print("\n")
-        input("Press enter to continue...")
+        input("This is the end of the program press enter to exit...")
+
+    elif (NTS == "Wikipedia" or NTS == "WIKIPEDIA" or NTS == "wikipedia"):
+
+        print("\nEnter the name of a bacteria to find more about it\n")
+        wiki_bacteria = str(input())
+        print("\n")
+        print(wikipedia.summary(wiki_bacteria, sentences = 7))
 
     else:
+        for gram_pos in gram_pos:
 
-        print("You have entered an illegal input please try again\n")
-        g_s()
+            if (gram_pos.name == NTS):
+
+                print("\n")
+                print(gram_pos)
+                print("\nGoing back to Main Menu\n")
+                input("Press any key to continue")
+                g_s()
+                return
+
+        for gram_neg in gram_neg:
+
+            if (gram_neg.name == NTS):
+
+                print("\n")
+                print(gram_neg)
+                print("Going back to Main Menu")
+                input("Press any key to continue")
+                g_s()
+                return
+
+
+        #Couldn't Find it
+        time.sleep(2)
+        start_uno()
+
+print("Welcome!")
+print("\nYou are using version " + __version__ + " of " + __name__ + " made by " + __author__)
 
 g_s()
