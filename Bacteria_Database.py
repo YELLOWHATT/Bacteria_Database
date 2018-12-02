@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 
 __author__ = "BIO-LOGYK Software"
-__credits__ = "Nico Moric"
+__credits__ = "BIO-LOGYK Software"
 __license__ = "MIT"
 __version__ = "0.0.0.0.25"
-__maintainer__ = "Nico Moric"
+__maintainer__ = "BIO-LOGYK Software"
 __email__ = "thekoolaidmannn@gmail.com"
 __status__ = "Production - Pre Alpha"
 __dates__ = "11/17/18 - 11/28/18"
