@@ -1,18 +1,17 @@
 # -*- coding: utf-8 -*-
 
 __author__ = "BIO-LOGYK Software"
-__credits__ = "BIO-LOGYK Software"
 __license__ = "MIT"
 __version__ = "0.0.0.0.25"
-__maintainer__ = "BIO-LOGYK Software"
+__maintainer__ = "Nico Moric"
 __email__ = "thekoolaidmannn@gmail.com"
-__status__ = "Production - Pre Alpha"
-__dates__ = "11/17/18 - 11/28/18"
+__status__ = "Production - Mid Alpha"
+__dates__ = "11/17/18 - 12/03/18"
 __type__ = "Scientific Application"
 __estimated_release_date__ = "03/07/19"
 __name__ = "Bactirio-Biolog"
 
-#import wikipedia
+import wikipedia
 import time
 import sys
 import os
@@ -47,6 +46,7 @@ bac00010001 = bacteria_name("Neisseria Meningitidis", "Gram Negative", "Meningit
 bac00010011 = bacteria_name("Prevotella Melaninogenica", "Gram Negative", "Melaninogenica")  # 19
 bac00010101 = bacteria_name("Salmonella Bongori", "Gram Negative", "Bongori") # 21
 bac00010111 = bacteria_name("Vibrio Cholerae", "Gram Negative", "Cholerae") # 23
+bac00011001 = bacteria_name("Brucellosis Canis", "Gram Negative", "Canis") # 25
 
 ##### Scientific name || Gram - || Species
 
@@ -70,6 +70,7 @@ bac00010010 = bacteria_name("Clostridium Perfringens", "Gram Positive", "Perfrin
 bac00010100 = bacteria_name("Staphylococcus Saprophyticus", "Gram Positive", "Saprophyticus")  # 20
 bac00010110 = bacteria_name("Corynebacterium Diphtheriae", "Gram Positive", "Diphtheriae") # 22
 bac00011000 = bacteria_name("Streptococcus Pyogenes", "Gram Positive", "Pyogenes") # 24
+bac00011010 = bacteria_name("Clostridium Perfringens", "Gram Positive", "Perfringens") # 26
 
 
 ##### Scientific name || Gram + || Species
@@ -111,12 +112,12 @@ def g_s():  # Gram Stain
 
         ext = str(input())
 
-        if (ext == "Yes"):
+        if (ext == "Yes" or ext == "yes"):
 
             print("Ok exitting...")
             raise SystemExit()
 
-        elif (ext == "No"):
+        elif (ext == "No" or ext == "no"):
 
             print("Ok going back to the program")
             time.sleep(2)
@@ -128,12 +129,14 @@ def g_s():  # Gram Stain
             start_dos()
 
     gram_pos = [bac00000010, bac00000100, bac00000110, bac00001000, bac00001010, bac00001100,
-                bac00001110, bac00010000, bac00010010, bac00010100, bac00010110, bac00011000]  # || EVEN NUMBERS
+                bac00001110, bac00010000, bac00010010, bac00010100, bac00010110, bac00011000,
+                bac00011010]  # || EVEN NUMBERS
 
     gram_neg = [bac00000001, bac00000011, bac00000101, bac00000111, bac00001001, bac00001011,
-                bac00001101, bac00001111, bac00010001, bac00010011, bac00010101, bac00010111]  # || ODD NUMBERS
+                bac00001101, bac00001111, bac00010001, bac00010011, bac00010101, bac00010111,
+                bac00011001]  # || ODD NUMBERS
 
-    print("\nPlease enter a Gram stain or a Name\n")
+    print("\nPlease enter a Gram stain, Name, or a Species\n")
     print("If you would like to find more information on a bacterial species enter wikipedia\n")
 
     NTS = str(input())
@@ -160,11 +163,29 @@ def g_s():  # Gram Stain
         wiki_bacteria = str(input())
         print("\n")
         print(wikipedia.summary(wiki_bacteria, sentences = 7))
+        print("\nWould you like to return  to the menu or exit?")
+
+        nexit = str(input())
+
+        if (nexit == "Exit" or nexit == "exit"):
+
+            print("Exitting...")
+            raise SystemExit()
+
+        elif (nexit == "Menu" or nexit == "menu"):
+
+            print("Returning to menu...")
+            g_s()
+
+        else:
+
+            start_uno()
+
 
     else:
         for gram_pos in gram_pos:
 
-            if (gram_pos.name == NTS):
+            if (gram_pos.name == NTS or gram_pos.species == NTS):
 
                 print("\n")
                 print(gram_pos)
@@ -175,7 +196,7 @@ def g_s():  # Gram Stain
 
         for gram_neg in gram_neg:
 
-            if (gram_neg.name == NTS):
+            if (gram_neg.name == NTS or gram_neg.species == NTS):
 
                 print("\n")
                 print(gram_neg)
@@ -184,8 +205,6 @@ def g_s():  # Gram Stain
                 g_s()
                 return
 
-
-        #Couldn't Find it
         time.sleep(2)
         start_uno()
 
