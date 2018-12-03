@@ -1,2 +1,2 @@
-# Bacteria_Database
-A Bacterial information tool 
+# Microbe_Database
+A Microbial information tool 
