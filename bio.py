@@ -177,6 +177,7 @@ def v(): # Virus
     print("If you would like to find more information on a Viral species enter wikipedia\n")
 
     VTS = str(input())
+    print("\n\n############")
 
     if (VTS == "Rna" or VTS == "RNA" or VTS == "rna"):  # Virus
 
@@ -216,7 +217,7 @@ def v(): # Virus
     else:
         for rna_based in rna_based:
 
-            if (rna_based.namev == VTS or rna_based.speciesv == VTS):
+            if (rna_based.namev == VTS or rna_based.speciesv == VTS or rna_based.typev):
                 print("\n")
                 print(rna_based)
                 print("\nGoing back to Main Menu\n")
@@ -249,6 +250,7 @@ def g_s():  # Gram Stain this is done
     print("If you would like to find more information on a bacterial species enter wikipedia\n")
 
     NTS = str(input())
+    print("\n\n############\n\n")
 
     if (NTS == "Gram Positive" or NTS == "Gram positive" or NTS == "gram positive"): # Grams stains
 
@@ -315,7 +317,7 @@ def g_s():  # Gram Stain this is done
         time.sleep(2)
         repeat()
 
-microbes = "Bacteria or Virus Protozoa (IN TEST FAZE) (Fungi coming soon!!!!!)"
+microbes = "Bacteria, Virus or Protozoa (IN TEST FAZE) (Fungi coming soon!!!!!)"
 
 print("Welcome!")
 print("\nYou are using version " + __version__ + " of " + __name__ + " made by " + __author__)
