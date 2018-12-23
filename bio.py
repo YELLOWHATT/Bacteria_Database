@@ -7,8 +7,8 @@ __license__ = "MIT"
 __version__ = "0.0.85"
 __maintainer__ = "Nico Moric"
 __email__ = "thekoolaidmannn@gmail.com"
-__status__ = "Production - Mid Alpha"
-__dates__ = "11/17/18 - 12/21/18"
+__status__ = "Production - Pre Alpha"
+__dates__ = "11/17/18 - 12/23/18"
 __type__ = "Scientific Application"
 __estimated_release_date__ = "03/07/19"
 __name__ = "Microbe-Log"
@@ -38,7 +38,7 @@ class virus:
 
 #### Scientific name || RNA || Species
 
-vrs = virus("Zaire Ebola Virus", "(-ssRNA)", "Ebola Virus", "Ebola Hemorhagic Fever") # Will be organized later
+vrs00000000 = virus("Zaire Ebola Virus", "(-ssRNA)", "Ebola Virus", "Ebola Hemorhagic Fever") # 1
 
 #### Scientific name || RNA || Species
 
@@ -59,19 +59,20 @@ class protozoa:
 
 ####
 
+####
+
 #### Protzoa || sOMETHING HERE
 
 #### Protozoa || SOMETHING HERE
 
-proto = protozoa("Toxoplasma gondii", "Spore forming", "Gondii", "Toxoplasmosis") # Will be organized later
-proto2 = protozoa("Plasmodium vivax", "Spore forming", "Vivax", "Malaria") # This will be organzied later
+proto00000001 = protozoa("Toxoplasma gondii", "Spore forming", "Gondii", "Toxoplasmosis") # 1
+proto00000010 = protozoa("Plasmodium vivax", "Spore forming", "Vivax", "Malaria") # 2
 
 #### Protozoa || SOMETHING HERE
 
 #### Protozoa || SOEMTHING HERE
 
 ####
-
 
 ##### Class separation
 
@@ -161,7 +162,7 @@ def repeat():
         elif (yes_exit != "No" or yes_exit != "NO" or yes_exit != "n"):
 
             print("Exitting")
-            sys.exit
+            sys.exit()
 
 ####
 
@@ -171,7 +172,7 @@ def repeat():
 
 def v(): # Virus
 
-    rna_based = [vrs]
+    rna_based = [vrs00000000]
 
     print("\nPlease enter a Nucleic type, Name, or a Species\n")
     print("If you would like to find more information on a Viral species enter wikipedia\n")
@@ -202,12 +203,13 @@ def v(): # Virus
         if (newexit == "Exit" or newexit == "exit"):
 
             print("Exitting...")
-            raise SystemExit()
+            sys.exit()
 
         elif (newexit == "Menu" or newexit == "menu"):
 
             print("Returning to menu...")
-            v()
+            repeat2()
+            return
 
         else:
 
@@ -217,24 +219,82 @@ def v(): # Virus
     else:
         for rna_based in rna_based:
 
-            if (rna_based.namev == VTS or rna_based.speciesv == VTS or rna_based.typev):
+            if (rna_based.namev == VTS or rna_based.speciesv == VTS or rna_based.typev == VTS):
+
                 print("\n")
                 print(rna_based)
                 print("\nGoing back to Main Menu\n")
                 input("Press any key to continue")
-                v()
+                repeat2()
                 return
 
     # include for other based viruses
 
         time.sleep(2)
         repeat()
-
 ####
 
 #### Function separation
 
 ####
+
+def protozoan():
+
+    protozoan_list = [proto00000001, proto00000010]
+
+    print("\nPlease enter a Protozoan name, Species, or Causative agent")
+
+    PTS = str(input())
+    print("\n\n############\n\n")
+
+    if (PTS == "Sporeforming" or PTS == "sporeforming" or PTS == "SPOREFORMING"):
+
+        for protozoan_list in protozoan_list:
+            print("\n")
+            print(protozoan_list)
+            print("\n")
+        input("This is the end of the program press enter to exit...")
+        repeat2()
+        return
+
+    elif (PTS == "Wikipedia" or PTS == "WIKIPEDIA" or PTS == "wikipedia"):
+
+        print("\nEnter the name of a bacteria to find more about it\n")
+        wiki_protozoa = str(input())
+        print("\n")
+        print(wikipedia.summary(wiki_protozoa, sentences = 7))
+        print("\nWould you like to return  to the menu or exit?")
+
+        nexit = str(input())
+
+        if (nexit == "Exit" or nexit == "exit"):
+
+            print("Exitting...")
+            sys.exit()
+
+        elif (nexit == "Menu" or nexit == "menu"):
+
+            print("Returning to menu...")
+            repeat2()
+            return
+
+        else:
+
+            repeat()
+
+    else:
+
+        for protozoan_list in protozoan_list:
+
+            if (protozoan_list.namep == PTS or protozoan_list.speciesp == PTS or protozoan_list.typep == PTS or protozoan_list.common_name_diseasep == PTS):
+
+                print(protozoan_list)
+                print("\nGoing back to Main Menu\n")
+                input("Press any key to continue\n")
+                repeat2()
+                return
+
+#### Function separation
 
 def g_s():  # Gram Stain this is done
 
@@ -281,12 +341,13 @@ def g_s():  # Gram Stain this is done
         if (nexit == "Exit" or nexit == "exit"):
 
             print("Exitting...")
-            raise SystemExit()
+            sys.exit()
 
         elif (nexit == "Menu" or nexit == "menu"):
 
             print("Returning to menu...")
-            g_s()
+            repeat2()
+            return
 
         else:
 
@@ -301,7 +362,7 @@ def g_s():  # Gram Stain this is done
                 print(gram_pos)
                 print("\nGoing back to Main Menu\n")
                 input("Press any key to continue\n")
-                g_s()
+                repeat2()
                 return
 
         for gram_neg in gram_neg:
@@ -311,7 +372,7 @@ def g_s():  # Gram Stain this is done
                 print(gram_neg)
                 print("\nGoing back to Main Menu\n")
                 input("Press any key to continue\n")
-                g_s()
+                repeat2()
                 return
 
         time.sleep(2)
@@ -331,6 +392,11 @@ def repeat2():
 
         print("\nGoing to Virus menu")
         v()
+
+    elif (view == "Protozoa" or view == "PROTOZOA" or view == "protozoa"):
+
+        print("\nGoing to Protozoa menu")
+        protozoan()
 
     elif (view == "Bacteria" or view == "bacteria" or view == "BACTERIA"):
 
