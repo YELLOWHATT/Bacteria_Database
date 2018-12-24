@@ -5,7 +5,7 @@
 __author__ = "SIGMA-LOGYKAL Software"
 __license__ = "MIT"
 __version__ = "0.0.85"
-__maintainer__ = "Nico Moric"
+__maintainer__ = "Yellow Hat"
 __email__ = "thekoolaidmannn@gmail.com"
 __status__ = "Production - Pre Alpha"
 __dates__ = "11/17/18 - 12/23/18"
@@ -17,9 +17,9 @@ import wikipedia
 import sys
 import time
 
-##### Numbers are organized in binary
+# Numbers are organized in binary
 
-#### b = bacteria || v = virus || p = protozoa || f = fungi
+# b = bacteria || v = virus || p = protozoa || f = fungi
 
 class virus:
 
@@ -32,19 +32,19 @@ class virus:
     def __str__(self):
         return (" ".join(["Name:", self.namev, "Type:", self.typev, "Species:", self.speciesv, "Common disease name:", self.common_name_diseasev]))
 
-#### LIST SEPARATION
+# LIST SEPARATION
 
-#### RNA || ODD NUMBERS
+# RNA || ODD NUMBERS
 
-#### Scientific name || RNA || Species
+# Scientific name || RNA || Species || Causative Agent
 
 vrs00000000 = virus("Zaire Ebola Virus", "(-ssRNA)", "Ebola Virus", "Ebola Hemorhagic Fever") # 1
 
-#### Scientific name || RNA || Species
+# Scientific name || RNA || Species || Causative Agent
 
-#### RNA || ODD NUMEBRS
+# RNA || ODD NUMBERS
 
-#### LIST SEPARATION
+# LIST SEPARATION
 
 class protozoa:
 
@@ -57,24 +57,31 @@ class protozoa:
     def __str__(self):
         return (" ".join(["Name:", self.namep, "Type:", self.typep, "Species:", self.speciesp, "Common disease name:", self.common_name_diseasep]))
 
-####
 
-####
+# Protozoa || Non-Sporeforming
 
-#### Protzoa || sOMETHING HERE
+# Scientific name || Non || Species || Causative Agent
 
-#### Protozoa || SOMETHING HERE
+# Start here
+
+# Scientific name || Non || Species || Causative Agent
+
+# Protozoa || Non-Sporeforming
+
+# ||||| ##### SEPARATED LISTS
+
+# Protozoa || Sporeforming
+
+# Scientific name || Spore || Species || Causative Agent
 
 proto00000001 = protozoa("Toxoplasma gondii", "Spore forming", "Gondii", "Toxoplasmosis") # 1
 proto00000010 = protozoa("Plasmodium vivax", "Spore forming", "Vivax", "Malaria") # 2
 
-#### Protozoa || SOMETHING HERE
+# Scientific name || Spore || Species || Causative Agent
 
-#### Protozoa || SOEMTHING HERE
+# Protozoa || Sporeforming
 
-####
-
-##### Class separation
+# Class separation
 
 class bacteria:
 
@@ -87,63 +94,55 @@ class bacteria:
     def __str__(self):
         return (" ".join(["Name:", self.nameb, "Type:", self.typeb, "Species:", self.speciesb, "Common disease name:", self.common_name_diseaseb]))
 
-#####
+# Gram Negative Bacteria || ODD NUMBERS
 
-##### Gram Negative Bacteria || ODD NUMBERS
+# Scientific name || Gram - || Species || Causative Agent
 
-##### Scientific name || Gram - || Species
-
-bac00000001 = bacteria("Eschericia Coli", "Gram Negative", "Coli", "Lorem ipsum")  # 1
-bac00000011 = bacteria("Pseudomonas Aeruginosa", "Gram Negatove", "Aeruginosa", "Lorem ipsum")  # 3
-bac00000101 = bacteria("Salmonella Enterica", "Gram Negative", "Enterica", "Lorem  ipsum")  # 5
-bac00000111 = bacteria("Helicobacter Pylori", "Gram Negative", "Pylori", "Lorem ipsum")  # 7
-bac00001001 = bacteria("Klebsiella Pneumoniae", "Gram Negative", "Pneumoniae", "Lorem ipsum")  # 9
-bac00001011 = bacteria("Burkholderia Pseudomallei", "Gram Negative", "Pseudomallei", "Lorem ipsum")  # 11
-bac00001101 = bacteria("Enterobacter Cloacae", "Gram Negative", "Cloacae", "Lorem ipsum")  # 13
-bac00001111 = bacteria("Yersinia Pestis", "Gram Negative", "Pestis", "lorem ipsum")  # 15
-bac00010001 = bacteria("Neisseria Meningitidis", "Gram Negative", "Meningitidis", "Lorem ipsum")  # 17
-bac00010011 = bacteria("Prevotella Melaninogenica", "Gram Negative", "Melaninogenica", "Lorem ipsum")  # 19
+bac00000001 = bacteria("Eschericia Coli", "Gram Negative", "Coli", "Lorem ipsum") # 1
+bac00000011 = bacteria("Pseudomonas Aeruginosa", "Gram Negatove", "Aeruginosa", "Lorem ipsum") # 3
+bac00000101 = bacteria("Salmonella Enterica", "Gram Negative", "Enterica", "Lorem  ipsum") # 5
+bac00000111 = bacteria("Helicobacter Pylori", "Gram Negative", "Pylori", "Lorem ipsum") # 7
+bac00001001 = bacteria("Klebsiella Pneumoniae", "Gram Negative", "Pneumoniae", "Lorem ipsum") # 9
+bac00001011 = bacteria("Burkholderia Pseudomallei", "Gram Negative", "Pseudomallei", "Lorem ipsum") # 11
+bac00001101 = bacteria("Enterobacter Cloacae", "Gram Negative", "Cloacae", "Lorem ipsum") # 13
+bac00001111 = bacteria("Yersinia Pestis", "Gram Negative", "Pestis", "lorem ipsum") # 15
+bac00010001 = bacteria("Neisseria Meningitidis", "Gram Negative", "Meningitidis", "Lorem ipsum") # 17
+bac00010011 = bacteria("Prevotella Melaninogenica", "Gram Negative", "Melaninogenica", "Lorem ipsum") # 19
 bac00010101 = bacteria("Salmonella Bongori", "Gram Negative", "Bongori", "Lorem ipsum") # 21
 bac00010111 = bacteria("Vibrio Cholerae", "Gram Negative", "Cholerae", "Lorem ipsum") # 23
 bac00011001 = bacteria("Brucellosis Canis", "Gram Negative", "Canis", "Lorem ipsum") # 25
 
-##### Scientific name || Gram - || Species
+# Scientific name || Gram - || Species || Causative Agent
 
-##### Gram Negative Bacteria || ODD NUMBERS
+# LIST SEPARATION |||||
 
-##### ||||| ##### SEPARATED LISTS
+# Scientific name || Gram + || Species || Causative Agent
 
-##### Gram Positive Bacteria || EVEN NUMBERS
-
-##### Scientific name || Gram + || Species
-
-bac00000010 = bacteria("Streptococcus Sanguinis", "Gram Negative", "Sanguinis", "Lorum ipsum")  # 2
-bac00000100 = bacteria("Staphylococcus Aureus", "Gram Positive", "Aureus", "Lorem ipsum")  # 4
-bac00000110 = bacteria("Clostridium Botulinum", "Gram Positive", "Botulinum", "Botulinum Toxin")  # 6
-bac00001000 = bacteria("Clostridium Tetani", "Gram Positive", "Tetani", "Tetanus")  # 8
+bac00000010 = bacteria("Streptococcus Sanguinis", "Gram Negative", "Sanguinis", "Lorum ipsum") # 2
+bac00000100 = bacteria("Staphylococcus Aureus", "Gram Positive", "Aureus", "Lorem ipsum") # 4
+bac00000110 = bacteria("Clostridium Botulinum", "Gram Positive", "Botulinum", "Botulinum Toxin") # 6
+bac00001000 = bacteria("Clostridium Tetani", "Gram Positive", "Tetani", "Tetanus") # 8
 bac00001010 = bacteria("Bacillus Anthracis", "Gram Positive", "Anthracis", "Anthrax")  # 10
-bac00001100 = bacteria("Listeria Monocytogenes", "Gram Positive", "Monocytogenes", "Lorum ipsum")  # 12
-bac00001110 = bacteria("Clostridioides Difficile", "Gram Positive", "Difficile", "Lorum ipsum")  # 14
-bac00010000 = bacteria("Streptococcus Mitis", "Gram Positive", "Mitis", "Lorum ipsum")  # 16
-bac00010010 = bacteria("Clostridium Perfringens", "Gram Positive", "Perfringens", "Lorum ipsum")  # 18
-bac00010100 = bacteria("Staphylococcus Saprophyticus", "Gram Positive", "Saprophyticus", "Lorum ipsum")  # 20
+bac00001100 = bacteria("Listeria Monocytogenes", "Gram Positive", "Monocytogenes", "Lorum ipsum") # 12
+bac00001110 = bacteria("Clostridioides Difficile", "Gram Positive", "Difficile", "Lorum ipsum") # 14
+bac00010000 = bacteria("Streptococcus Mitis", "Gram Positive", "Mitis", "Lorum ipsum") # 16
+bac00010010 = bacteria("Clostridium Perfringens", "Gram Positive", "Perfringens", "Lorum ipsum") # 18
+bac00010100 = bacteria("Staphylococcus Saprophyticus", "Gram Positive", "Saprophyticus", "Lorum ipsum") # 20
 bac00010110 = bacteria("Corynebacterium Diphtheriae", "Gram Positive", "Diphtheriae", "Lorem ipsum") # 22
 bac00011000 = bacteria("Streptococcus Pyogenes", "Gram Positive", "Pyogenes", "Lorem ipsum") # 24
 bac00011010 = bacteria("Clostridium Perfringens", "Gram Positive", "Perfringens", "Lorum ipsum") # 26
 
+# Scientific name || Gram + || Species || Causative Agent
 
-##### Scientific name || Gram + || Species
-
-##### Gram Positive Bacteria || EVEN NUMBERS
-
-#####
+# Gram Positive Bacteria || EVEN NUMBERS
 
 def repeat():
+
     print("You have entered an incorrect input please try again")
     print("Would you like to exit or continue?")
     continue_with_program = str(input())
 
-    if (continue_with_program == "No" or continue_with_program == "no" or continue_with_program == "NO"):
+    if continue_with_program == "No" or continue_with_program == "no" or continue_with_program == "NO":
 
         print("Ok continuing program")
         g_s()
@@ -153,24 +152,18 @@ def repeat():
         print("Are you sure you would like to exit")
         yes_exit = str(input())
 
-        if (yes_exit == "No" or yes_exit == "NO" or yes_exit == "no"):
+        if yes_exit == "No" or yes_exit == "NO" or yes_exit == "no":
 
             print("OK")
             print("Going back to repeat")
             repeat()
 
-        elif (yes_exit != "No" or yes_exit != "NO" or yes_exit != "n"):
+        elif yes_exit != "No" or yes_exit != "NO" or yes_exit != "n":
 
-            print("Exitting")
+            print("Exiting")
             sys.exit()
 
-####
-
-#### Function separation
-
-####
-
-def v(): # Virus
+def v():
 
     rna_based = [vrs00000000]
 
@@ -180,7 +173,9 @@ def v(): # Virus
     VTS = str(input())
     print("\n\n############")
 
-    if (VTS == "Rna" or VTS == "RNA" or VTS == "rna"):  # Virus
+    rna_based.sort(key = lambda x: x.namev)
+
+    if VTS == "Rna" or VTS == "RNA" or VTS == "rna": # Virus
 
         for rna_based in rna_based:
             print("\n")
@@ -190,9 +185,9 @@ def v(): # Virus
 
     # Include one for other based viruses
 
-    elif (VTS == "Wikipedia" or VTS == "WIKIPEDIA" or VTS == "wikipedia"):
+    elif VTS == "Wikipedia" or VTS == "WIKIPEDIA" or VTS == "wikipedia":
 
-        print("\nEnter the name of a bacteria to find more about it\n")
+        print("\nEnter the name of a Virus to find more about it\n")
         wiki_virus = str(input())
         print("\n")
         print(wikipedia.summary(wiki_virus, sentences = 7))
@@ -200,12 +195,12 @@ def v(): # Virus
 
         newexit = str(input())
 
-        if (newexit == "Exit" or newexit == "exit"):
+        if newexit == "Exit" or newexit == "exit":
 
-            print("Exitting...")
+            print("Exiting...")
             sys.exit()
 
-        elif (newexit == "Menu" or newexit == "menu"):
+        elif newexit == "Menu" or newexit == "menu":
 
             print("Returning to menu...")
             repeat2()
@@ -215,11 +210,10 @@ def v(): # Virus
 
             repeat()
 
-
     else:
         for rna_based in rna_based:
 
-            if (rna_based.namev == VTS or rna_based.speciesv == VTS or rna_based.typev == VTS):
+            if rna_based.namev == VTS or rna_based.speciesv == VTS or rna_based.typev == VTS:
 
                 print("\n")
                 print(rna_based)
@@ -232,11 +226,6 @@ def v(): # Virus
 
         time.sleep(2)
         repeat()
-####
-
-#### Function separation
-
-####
 
 def protozoan():
 
@@ -247,7 +236,9 @@ def protozoan():
     PTS = str(input())
     print("\n\n############\n\n")
 
-    if (PTS == "Sporeforming" or PTS == "sporeforming" or PTS == "SPOREFORMING"):
+    protozoan_list.sort(key = lambda x: x.namep)
+
+    if PTS == "Sporeforming" or PTS == "sporeforming" or PTS == "SPOREFORMING":
 
         for protozoan_list in protozoan_list:
             print("\n")
@@ -257,9 +248,9 @@ def protozoan():
         repeat2()
         return
 
-    elif (PTS == "Wikipedia" or PTS == "WIKIPEDIA" or PTS == "wikipedia"):
+    elif PTS == "Wikipedia" or PTS == "WIKIPEDIA" or PTS == "wikipedia":
 
-        print("\nEnter the name of a bacteria to find more about it\n")
+        print("\nEnter the name of a Protozoan to find more about it\n")
         wiki_protozoa = str(input())
         print("\n")
         print(wikipedia.summary(wiki_protozoa, sentences = 7))
@@ -267,12 +258,12 @@ def protozoan():
 
         nexit = str(input())
 
-        if (nexit == "Exit" or nexit == "exit"):
+        if nexit == "Exit" or nexit == "exit":
 
-            print("Exitting...")
+            print("Exiting...")
             sys.exit()
 
-        elif (nexit == "Menu" or nexit == "menu"):
+        elif nexit == "Menu" or nexit == "menu":
 
             print("Returning to menu...")
             repeat2()
@@ -286,7 +277,7 @@ def protozoan():
 
         for protozoan_list in protozoan_list:
 
-            if (protozoan_list.namep == PTS or protozoan_list.speciesp == PTS or protozoan_list.typep == PTS or protozoan_list.common_name_diseasep == PTS):
+            if protozoan_list.namep == PTS or protozoan_list.speciesp == PTS or protozoan_list.typep == PTS or protozoan_list.common_name_diseasep == PTS:
 
                 print(protozoan_list)
                 print("\nGoing back to Main Menu\n")
@@ -294,17 +285,18 @@ def protozoan():
                 repeat2()
                 return
 
-#### Function separation
-
-def g_s():  # Gram Stain this is done
+def g_s():
 
     gram_pos = [bac00000010, bac00000100, bac00000110, bac00001000, bac00001010, bac00001100,
                 bac00001110, bac00010000, bac00010010, bac00010100, bac00010110, bac00011000,
-                bac00011010]  # || EVEN NUMBERS
+                bac00011010] # || EVEN NUMBERS
 
     gram_neg = [bac00000001, bac00000011, bac00000101, bac00000111, bac00001001, bac00001011,
                 bac00001101, bac00001111, bac00010001, bac00010011, bac00010101, bac00010111,
-                bac00011001]  # || ODD NUMBERS
+                bac00011001] # || ODD NUMBERS
+
+    gram_pos.sort(key = lambda x: x.nameb)
+    gram_neg.sort(key = lambda x: x.nameb)
 
     print("\nPlease enter a Gram stain, Name, Species or a Common name / disease\n")
     print("If you would like to find more information on a bacterial species enter wikipedia\n")
@@ -312,7 +304,7 @@ def g_s():  # Gram Stain this is done
     NTS = str(input())
     print("\n\n############\n\n")
 
-    if (NTS == "Gram Positive" or NTS == "Gram positive" or NTS == "gram positive"): # Grams stains
+    if NTS == "Gram Positive" or NTS == "Gram positive" or NTS == "gram positive": # Grams stains
 
         for gram_pos in gram_pos:
             print("\n")
@@ -320,7 +312,7 @@ def g_s():  # Gram Stain this is done
             print("\n")
         input("This is the end of the program press enter to exit...")
 
-    elif (NTS == "Gram Negative" or NTS == "Gram negative" or NTS == "gram negative"): # Grams stains
+    elif NTS == "Gram Negative" or NTS == "Gram negative" or NTS == "gram negative": # Grams stains
 
         for gram_neg in gram_neg:
             print("\n")
@@ -328,9 +320,9 @@ def g_s():  # Gram Stain this is done
             print("\n")
         input("This is the end of the program press enter to exit...")
 
-    elif (NTS == "Wikipedia" or NTS == "WIKIPEDIA" or NTS == "wikipedia"):
+    elif NTS == "Wikipedia" or NTS == "WIKIPEDIA" or NTS == "wikipedia":
 
-        print("\nEnter the name of a bacteria to find more about it\n")
+        print("\nEnter the name of a Bacteria to find more about it\n")
         wiki_bacteria = str(input())
         print("\n")
         print(wikipedia.summary(wiki_bacteria, sentences = 7))
@@ -338,12 +330,12 @@ def g_s():  # Gram Stain this is done
 
         nexit = str(input())
 
-        if (nexit == "Exit" or nexit == "exit"):
+        if nexit == "Exit" or nexit == "exit":
 
             print("Exitting...")
             sys.exit()
 
-        elif (nexit == "Menu" or nexit == "menu"):
+        elif nexit == "Menu" or nexit == "menu":
 
             print("Returning to menu...")
             repeat2()
@@ -353,11 +345,10 @@ def g_s():  # Gram Stain this is done
 
             repeat()
 
-
     else:
         for gram_pos in gram_pos:
 
-            if (gram_pos.nameb == NTS or gram_pos.speciesb == NTS or gram_pos.common_name_diseaseb == NTS):
+            if gram_pos.nameb == NTS or gram_pos.speciesb == NTS or gram_pos.common_name_diseaseb == NTS:
 
                 print(gram_pos)
                 print("\nGoing back to Main Menu\n")
@@ -366,8 +357,7 @@ def g_s():  # Gram Stain this is done
                 return
 
         for gram_neg in gram_neg:
-
-            if (gram_neg.nameb == NTS or gram_neg.speciesb == NTS or gram_pos.common_name_diseaseb == NTS):
+            if gram_neg.nameb == NTS or gram_neg.speciesb == NTS or gram_pos.common_name_diseaseb == NTS:
 
                 print(gram_neg)
                 print("\nGoing back to Main Menu\n")
@@ -388,17 +378,17 @@ def repeat2():
     print("\nPlease select if you would like to view, " + microbes + "\n")
     view = str(input())
 
-    if (view == "Virus" or view == "virus" or view == "VIRUS"):
+    if view == "Virus" or view == "virus" or view == "VIRUS":
 
         print("\nGoing to Virus menu")
         v()
 
-    elif (view == "Protozoa" or view == "PROTOZOA" or view == "protozoa"):
+    elif view == "Protozoa" or view == "PROTOZOA" or view == "protozoa":
 
         print("\nGoing to Protozoa menu")
         protozoan()
 
-    elif (view == "Bacteria" or view == "bacteria" or view == "BACTERIA"):
+    elif view == "Bacteria" or view == "bacteria" or view == "BACTERIA":
 
         print("\nGoing to Bacteria menu")
         g_s()
