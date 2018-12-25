@@ -4,11 +4,11 @@
 
 __author__ = "SIGMA-LOGYKAL Software"
 __license__ = "MIT"
-__version__ = "0.0.85"
+__version__ = "0.0.88"
 __maintainer__ = "Yellow Hat"
 __email__ = "thekoolaidmannn@gmail.com"
 __status__ = "Production - Pre Alpha"
-__dates__ = "11/17/18 - 12/23/18"
+__dates__ = "11/17/18 - 12/24/18"
 __type__ = "Scientific Application"
 __estimated_release_date__ = "03/07/19"
 __name__ = "Microbe-Log"
@@ -21,6 +21,8 @@ import time
 
 # b = bacteria || v = virus || p = protozoa || f = fungi
 
+# A symtoms thing will be made later
+
 class virus:
 
     def __init__(self, namev, typev, speciesv, common_name_diseasev):
@@ -32,19 +34,19 @@ class virus:
     def __str__(self):
         return (" ".join(["Name:", self.namev, "Type:", self.typev, "Species:", self.speciesv, "Common disease name:", self.common_name_diseasev]))
 
-# LIST SEPARATION
-
 # RNA || ODD NUMBERS
 
 # Scientific name || RNA || Species || Causative Agent
 
-vrs00000000 = virus("Zaire Ebola Virus", "(-ssRNA)", "Ebola Virus", "Ebola Hemorhagic Fever") # 1
+vrs00000001 = virus("Zaire Ebola Virus", "((-)ssRNA)", "Ebola Virus", "Ebola Hemorhagic Fever") # 1
+
+# List Separation
+
+vrs00000010 = virus("Variola Major", "(dsDNA)", "Variola", "Small pox") #2
 
 # Scientific name || RNA || Species || Causative Agent
 
-# RNA || ODD NUMBERS
-
-# LIST SEPARATION
+# DNA || EVEN NUMBERS
 
 class protozoa:
 
@@ -64,15 +66,7 @@ class protozoa:
 
 # Start here
 
-# Scientific name || Non || Species || Causative Agent
-
-# Protozoa || Non-Sporeforming
-
 # ||||| ##### SEPARATED LISTS
-
-# Protozoa || Sporeforming
-
-# Scientific name || Spore || Species || Causative Agent
 
 proto00000001 = protozoa("Toxoplasma gondii", "Spore forming", "Gondii", "Toxoplasmosis") # 1
 proto00000010 = protozoa("Plasmodium vivax", "Spore forming", "Vivax", "Malaria") # 2
@@ -136,6 +130,66 @@ bac00011010 = bacteria("Clostridium Perfringens", "Gram Positive", "Perfringens"
 
 # Gram Positive Bacteria || EVEN NUMBERS
 
+def bug():
+
+    print("Hi")
+
+def info():
+
+    print("Hi")
+
+def help():
+
+    help_options = "Report a bug, Info or Exit"
+
+    print("\nPlease enter one of the following options: " + help_options)
+
+    help_input = str(input())
+
+    if help_input == "Report a bug" or help_input == "report a bug" or help_input == "REPORT A BUG":
+
+        print("Going to bug menu")
+        bug()
+
+    elif help_input == "Info" or help_input == "info" or help_input == "INFO":
+
+        print("Going to info")
+        info()
+
+    else:
+
+        print("Are you sure you want to exit?")
+        exting = str(input())
+
+        if exting == "Yes" or exting == "yes" or exting == "YES" or exting == "Exit" or exting == "exit" or exting == "EXIT":
+
+            print ("Exiting")
+            sys.exit()
+
+            # Add some exceptions here
+
+        else:
+
+            print("It seems you have not entered a valid input try again or enter menu to go to menu")
+            new_exit = str(input())
+
+            if new_exit == "Exit":
+
+                print("Exiting")
+                sys.exit()
+
+            elif new_exit == "Menu":
+
+                print("Going to menu")
+                repeat2()
+                return
+
+            else:
+
+                print("Try again")
+                repeat()
+                return
+
 def repeat():
 
     print("You have entered an incorrect input please try again")
@@ -145,7 +199,8 @@ def repeat():
     if continue_with_program == "No" or continue_with_program == "no" or continue_with_program == "NO":
 
         print("Ok continuing program")
-        g_s()
+        repeat2()
+        return
 
     else:
 
@@ -165,25 +220,35 @@ def repeat():
 
 def v():
 
-    rna_based = [vrs00000000]
+    dna_based = [vrs00000010]
+    rna_based = [vrs00000001]
 
     print("\nPlease enter a Nucleic type, Name, or a Species\n")
-    print("If you would like to find more information on a Viral species enter wikipedia\n")
+    print("If you would like to find more information on a Viral species enter Wikipedia\n")
 
     VTS = str(input())
     print("\n\n############")
 
     rna_based.sort(key = lambda x: x.namev)
+    dna_based.sort(key = lambda x: x.namev)
 
-    if VTS == "Rna" or VTS == "RNA" or VTS == "rna": # Virus
+    if VTS == "Rna" or VTS == "RNA" or VTS == "rna":
 
         for rna_based in rna_based:
+
             print("\n")
             print(rna_based)
             print("\n")
         input("This is the end of the program press enter to exit...")
 
-    # Include one for other based viruses
+    elif VTS == "Dna" or VTS == "dna" or VTS == "DNA":
+
+        for dna_based in dna_based:
+
+            print("\n")
+            print(dna_based)
+            print("\n")
+        input("This is the end of the program pres enter to exit...")
 
     elif VTS == "Wikipedia" or VTS == "WIKIPEDIA" or VTS == "wikipedia":
 
@@ -211,9 +276,10 @@ def v():
             repeat()
 
     else:
+
         for rna_based in rna_based:
 
-            if rna_based.namev == VTS or rna_based.speciesv == VTS or rna_based.typev == VTS:
+            if rna_based.namev == VTS or rna_based.speciesv == VTS or rna_based.typev == VTS or rna_based.common_name_diseasev == VTS:
 
                 print("\n")
                 print(rna_based)
@@ -222,27 +288,37 @@ def v():
                 repeat2()
                 return
 
-    # include for other based viruses
+        for dna_based in dna_based:
+
+            if dna_based.namev == VTS or dna_based.speciesv == VTS or dna_based.typev == VTS or dna_based.common_name_diseasev == VTS:
+
+                print("\n")
+                print(dna_based)
+                print("\nGoing back to Main Menu\n")
+                input("Press any key to continue")
+                repeat2()
+                return
 
         time.sleep(2)
         repeat()
 
 def protozoan():
 
-    protozoan_list = [proto00000001, proto00000010]
+    spore_forming_p_list = [proto00000001, proto00000010]
 
-    print("\nPlease enter a Protozoan name, Species, or Causative agent")
+    print("\nPlease enter a Protozoan name, Species, or Causative agent\n")
+    print("If you would like to find more information on a viral species enter Wikipedia\n")
 
     PTS = str(input())
     print("\n\n############\n\n")
 
-    protozoan_list.sort(key = lambda x: x.namep)
+    spore_forming_p_list.sort(key = lambda x: x.namep)
 
     if PTS == "Sporeforming" or PTS == "sporeforming" or PTS == "SPOREFORMING":
 
-        for protozoan_list in protozoan_list:
+        for spore_forming_p_list in spore_forming_p_list:
             print("\n")
-            print(protozoan_list)
+            print(spore_forming_p_list)
             print("\n")
         input("This is the end of the program press enter to exit...")
         repeat2()
@@ -275,11 +351,11 @@ def protozoan():
 
     else:
 
-        for protozoan_list in protozoan_list:
+        for spore_forming_p_list in spore_forming_p_list:
 
-            if protozoan_list.namep == PTS or protozoan_list.speciesp == PTS or protozoan_list.typep == PTS or protozoan_list.common_name_diseasep == PTS:
+            if spore_forming_p_list.namep == PTS or spore_forming_p_list.speciesp == PTS or spore_forming_p_list.typep == PTS or spore_forming_p_list.common_name_diseasep == PTS:
 
-                print(protozoan_list)
+                print(spore_forming_p_list)
                 print("\nGoing back to Main Menu\n")
                 input("Press any key to continue\n")
                 repeat2()
@@ -299,7 +375,7 @@ def g_s():
     gram_neg.sort(key = lambda x: x.nameb)
 
     print("\nPlease enter a Gram stain, Name, Species or a Common name / disease\n")
-    print("If you would like to find more information on a bacterial species enter wikipedia\n")
+    print("If you would like to find more information on a bacterial species enter Wikipedia\n")
 
     NTS = str(input())
     print("\n\n############\n\n")
@@ -346,6 +422,7 @@ def g_s():
             repeat()
 
     else:
+
         for gram_pos in gram_pos:
 
             if gram_pos.nameb == NTS or gram_pos.speciesb == NTS or gram_pos.common_name_diseaseb == NTS:
@@ -357,6 +434,7 @@ def g_s():
                 return
 
         for gram_neg in gram_neg:
+
             if gram_neg.nameb == NTS or gram_neg.speciesb == NTS or gram_pos.common_name_diseaseb == NTS:
 
                 print(gram_neg)
@@ -368,7 +446,7 @@ def g_s():
         time.sleep(2)
         repeat()
 
-microbes = "Bacteria, Virus or Protozoa (IN TEST FAZE) (Fungi coming soon!!!!!)"
+microbes = "Bacteria, Virus, Protozoa or Help (Fungi coming soon!!!!!)"
 
 print("Welcome!")
 print("\nYou are using version " + __version__ + " of " + __name__ + " made by " + __author__)
@@ -387,6 +465,11 @@ def repeat2():
 
         print("\nGoing to Protozoa menu")
         protozoan()
+
+    elif view == "Help" or view == "help" or view == "HELP":
+
+        print("\nGoing to Help menu")
+        help()
 
     elif view == "Bacteria" or view == "bacteria" or view == "BACTERIA":
 
