@@ -21,28 +21,31 @@ import time
 
 # b = bacteria || v = virus || p = protozoa || f = fungi
 
-# A symtoms thing will be made later
+# A symptoms thing will be made later
 
 class virus:
 
-    def __init__(self, namev, typev, speciesv, common_name_diseasev):
+    def __init__(self, namev, typev, speciesv, common_name_diseasev, groupv):
         self.namev = namev
         self.typev = typev
         self.speciesv = speciesv
         self.common_name_diseasev = common_name_diseasev
+        self.groupv = groupv
 
     def __str__(self):
-        return (" ".join(["Name:", self.namev, "Type:", self.typev, "Species:", self.speciesv, "Common disease name:", self.common_name_diseasev]))
+        return (" ".join(["Name:", self.namev, "Type:", self.typev, "Species:", self.speciesv, "Common disease name:", self.common_name_diseasev, "Group:", self.groupv]))
 
 # RNA || ODD NUMBERS
 
 # Scientific name || RNA || Species || Causative Agent
 
-vrs00000001 = virus("Zaire Ebola Virus", "((-)ssRNA)", "Ebola Virus", "Ebola Hemorhagic Fever") # 1
+vrs00000001 = virus("Zaire Ebola Virus", "((-)ssRNA)", "Ebola Virus", "Ebola Hemorrhagic Fever", "Group V") # 1
+vrs00000011 = virus("Marburg Virus", "((-)ssRNA)", "Marburg", "Marburg Hemorrhagic Fever", "Group V") # 3
 
 # List Separation
 
-vrs00000010 = virus("Variola Major", "(dsDNA)", "Variola", "Small pox") #2
+vrs00000010 = virus("Variola Major", "(dsDNA)", "Variola", "Small Pox", "Group I") #2
+vrs00000100 = virus("Human Herpes Simplex Virus I", "(dsDNA)", "Herpes Simplex Virus I", "Herpes Virus", "Group I") # 4
 
 # Scientific name || RNA || Species || Causative Agent
 
@@ -132,11 +135,17 @@ bac00011010 = bacteria("Clostridium Perfringens", "Gram Positive", "Perfringens"
 
 def bug():
 
-    print("Hi")
+    print("\nTo report a bug please emial it to this email: " + __email__)
+    print("\nReturning to help menu\n")
+    help()
+    return
 
 def info():
 
-    print("Hi")
+    print("\nThis is a program that helps with Microbiological information")
+    print("Returning to help menu\n")
+    help()
+    return
 
 def help():
 
@@ -165,8 +174,6 @@ def help():
 
             print ("Exiting")
             sys.exit()
-
-            # Add some exceptions here
 
         else:
 
@@ -220,8 +227,8 @@ def repeat():
 
 def v():
 
-    dna_based = [vrs00000010]
-    rna_based = [vrs00000001]
+    dna_based = [vrs00000010, vrs00000100]
+    rna_based = [vrs00000001, vrs00000011]
 
     print("\nPlease enter a Nucleic type, Name, or a Species\n")
     print("If you would like to find more information on a Viral species enter Wikipedia\n")
@@ -279,7 +286,7 @@ def v():
 
         for rna_based in rna_based:
 
-            if rna_based.namev == VTS or rna_based.speciesv == VTS or rna_based.typev == VTS or rna_based.common_name_diseasev == VTS:
+            if rna_based.namev == VTS or rna_based.speciesv == VTS or rna_based.typev == VTS or rna_based.common_name_diseasev == VTS or rna_based.groupv == VTS:
 
                 print("\n")
                 print(rna_based)
@@ -290,7 +297,7 @@ def v():
 
         for dna_based in dna_based:
 
-            if dna_based.namev == VTS or dna_based.speciesv == VTS or dna_based.typev == VTS or dna_based.common_name_diseasev == VTS:
+            if dna_based.namev == VTS or dna_based.speciesv == VTS or dna_based.typev == VTS or dna_based.common_name_diseasev == VTS or dna_based.groupv == VTS:
 
                 print("\n")
                 print(dna_based)
