@@ -284,27 +284,21 @@ def v():
 
     else:
 
-        for rna_based in rna_based:
+        for rna_virus, dna_virus in rna_based, dna_based:
 
-            if rna_based.namev == VTS or rna_based.speciesv == VTS or rna_based.typev == VTS or rna_based.common_name_diseasev == VTS or rna_based.groupv == VTS:
+            if rna_virus.namev == VTS or rna_virus.speciesv == VTS or rna_virus.typev == VTS or rna_virus.common_name_diseasev == VTS or rna_virus.groupv == VTS:
 
                 print("\n")
-                print(rna_based)
+                print(rna_virus)
+                print(dna_virus)
                 print("\nGoing back to Main Menu\n")
                 input("Press any key to continue")
                 repeat2()
                 return
 
-        for dna_based in dna_based:
+            else:
 
-            if dna_based.namev == VTS or dna_based.speciesv == VTS or dna_based.typev == VTS or dna_based.common_name_diseasev == VTS or dna_based.groupv == VTS:
-
-                print("\n")
-                print(dna_based)
-                print("\nGoing back to Main Menu\n")
-                input("Press any key to continue")
-                repeat2()
-                return
+                pass
 
         time.sleep(2)
         repeat()
